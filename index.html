@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Dog Images</title>
+</head>
+<body>
+    <header>
+        <h1>Get a pupper pic</h1>
+    </header>
+    <form>
+        <fieldset>
+        <legend><br>
+            <h3>Choose the number of images to display, then click "Go."</h3>
+        </legend>
+            <label for="number-of-pics">Number of Images</label>
+            <input type="text" id="number-of-pics" value="3" required>
+            <button type="submit">Go!</button>
+        
+            <section class="results hidden">
+                    <h2>Doggies!</h2>
+                    <div id="results-img">
+                    <img class="results-img" src="https://images1.americanlisted.com/nlarge/hairless-male-chinese-crested-puppy-rtg-americanlisted_32200039.jpg" alt="placeholder">
+                    </div>
+                    <ul id="search-results">
+                        <li></li>
+                    </ul>
+                </section>
+        </fieldset>
+
+       
+        
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
