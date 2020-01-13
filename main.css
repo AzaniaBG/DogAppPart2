@@ -1,8 +1,9 @@
-img >.results-img {
-    width: 100px;
-    height: auto;
 
-}
-#search-results, .no-bullets {
+.results ul {
     list-style-type: none;
+}
+
+.results img {
+    width: 100px;
+    height: 100px;
 }

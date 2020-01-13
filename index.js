@@ -1,34 +1,35 @@
 'use strict'
 function getDogImages(number) {
     
-    fetch(`https://dog.ceo/api/breeds/image/random/${number}`).then(response => response.json()).then(responseJson => {
-        let images = responseJson.message;
-        images.map(image => {
-            displayImages(image);
-            //console.log(`image is ${image}`)
-            //return image
-        })
-        // console.log(`images is ${images}`)
-        // return images;
-    });
+    fetch(`https://dog.ceo/api/breeds/image/random/${number}`)
+      .then(response => response.json())
+      .then(responseJson =>  displayImages(responseJson));
     
 }
 
 
-function displayImages(images) {
-    // $(".results-img").replaceWith(`<img src="${images}" class="results-img">`);
-    // $(".results").removeClass("hidden");
-    $(".results-img").empty();
-    $("#results-img").hide();
-    $("#search-results").append(`<li class="no-bullets"><img class="results-img" src="${images}" class="results-img"></li>`);
+function displayImages(responseJson) {
+    //$("#results").empty();
+    let imageString = "";
+    imageString += `<ul>` 
+    responseJson.message.map(image => {
+        imageString += `<li><img src="${image}"/></li>`
+    })
+    imageString += `</ul>`
+    $(".results").html(imageString);
     $(".results").removeClass("hidden");
+    
 }
 
 function watchForm() {
     $('form').submit(event =>{
         event.preventDefault();
         let inputValue = $("input").val();
-        getDogImages(inputValue);  
+        if(inputValue > 50) {
+            $("#results").html(`<h1>Please select a number between 1 and 50</h1>`)
+        } else {
+            getDogImages(inputValue);
+        };  
     });
 }
 
