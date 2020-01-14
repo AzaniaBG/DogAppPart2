@@ -26,7 +26,7 @@ function watchForm() {
         event.preventDefault();
         let inputValue = $("input").val();
         if(inputValue > 50 || inputValue <= 0) {
-            $(".results").html(`<h1>Please select a number between 1 and 50</h1>`)
+            $(".results").html(`<h1 id="incorrect-number">Please select a number between 1 and 50</h1>`)
         } else {
             getDogImages(inputValue);
         };  
